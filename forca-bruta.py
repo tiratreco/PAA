@@ -68,9 +68,8 @@ recebe a quantidade de vertices em cada combinação e a quantidade de vertices 
 retorna uma lista de combinações com o tamanho escolhido no parâmetro
 nota: se o numero de vertices do grafo passado por parametro for, por exemplo,
 10, os vertices serão enumerados de 0 até 9
+retorna n!/(p!(n-p)!) combinações
 '''
-
-
 def combinacoes(num, tam):
     combinacoes = []
     nums = []
@@ -134,13 +133,10 @@ def salvarImagem(grafo, resposta, nomeArquivo):
     plt.savefig(nomeArquivo[:-4]+"_Conjunto_Dominante.png",
                 format="PNG")  # salvando grafo
 
-grafo, nomeArquivo = lerGrafo()
-#print (grafo)
 
+grafo, nomeArquivo = lerGrafo()
 start_time = time.time()
 resposta = forcaBruta(grafo)
 print(resposta)
 print("--- %s seconds ---" % (time.time() - start_time))
-
 salvarImagem(grafo, resposta, nomeArquivo)
-# print(combinacoes)
